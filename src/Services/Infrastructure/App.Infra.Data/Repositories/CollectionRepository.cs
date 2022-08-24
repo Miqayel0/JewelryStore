@@ -9,4 +9,11 @@ internal class CollectionRepository : RepositoryBase<Collection, int>, ICollecti
     public CollectionRepository(AppDbContext context) : base(context)
     {
     }
+
+    // TODO 
+    //Task FindEmployeeToAssignAsync()
+    //{
+
+    //}
+
 }
