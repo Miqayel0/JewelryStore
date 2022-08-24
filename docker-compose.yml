@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  appapi:
+    image: ${DOCKER_REGISTRY-}appapi
+    build:
+      context: .
+      dockerfile: src/APIGateways/AppAPI/Dockerfile
+      
+  appdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest

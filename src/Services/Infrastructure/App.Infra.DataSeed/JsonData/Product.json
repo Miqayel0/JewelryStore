@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Golden Ring"
+  },
+  {
+    "Id": 2,
+    "Name": "Golden Necklace"
+  },
+  {
+    "Id": 3,
+    "Name": "Golden Bangle"
+  },
+  {
+    "Id": 4,
+    "Name": "Silver Ring"
+  },
+  {
+    "Id": 5,
+    "Name": "Silver Necklace"
+  },
+  {
+    "Id": 6,
+    "Name": "Silver Bangle"
+  },
+  {
+    "Id": 7,
+    "Name": "Copper Ring"
+  },
+  {
+    "Id": 8,
+    "Name": "Copper Necklace"
+  },
+  {
+    "Id": 9,
+    "Name": "Copper Bangle"
+  }
+]

@@ -1,0 +1,23 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Golden collection",
+    "Price": 5000,
+    "MaterialId": 1,
+    "ExpectedTime": 432000
+  },
+  {
+    "Id": 2,
+    "Name": "Siler collection",
+    "Price": 3000,
+    "MaterialId": 2,
+    "ExpectedTime": 1728000
+  },
+  {
+    "Id": 3,
+    "Name": "Copper collection",
+    "Price": 2000,
+    "MaterialId": 3,
+    "ExpectedTime": 259200
+  }
+]

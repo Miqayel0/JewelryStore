@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  appapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=appdb,1433;Database=Jewelry_db;User Id=sa;Password=Jik302_j8;Trusted_Connection=False;MultipleActiveResultSets=True;Packet Size=4096;
+    ports:
+      - "8001:80"
+    depends_on:
+      - appdb
+      
+  appdb:
+    container_name: appdb
+    restart: always
+    ports:
+      - 1433:1433
+    volumes:
+      - ~/apps/mssql/data:/var/lib/mssqlql/data
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Jik302_j8

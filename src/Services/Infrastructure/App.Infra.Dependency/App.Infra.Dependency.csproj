@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\App.Infra.Data\App.Infra.Data.csproj" />
+		<ProjectReference Include="..\App.Infra.DataSeed\App.Infra.DataSeed.csproj" />
+		<ProjectReference Include="..\..\UseCase\App.UseCase\App.UseCase.csproj" />
+		<ProjectReference Include="..\..\UseCase\App.UseCase.Command\App.UseCase.Command.csproj" />
+		<ProjectReference Include="..\..\UseCase\App.UseCase.Query\App.UseCase.Query.csproj" />
+	</ItemGroup>
+
+</Project>

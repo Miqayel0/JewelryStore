@@ -1,0 +1,47 @@
+﻿[
+  {
+    "Id": 1,
+    "ProductId": 1,
+    "CollectionId": 1
+  },
+  {
+    "Id": 1,
+    "ProductId": 2,
+    "CollectionId": 1
+  },
+  {
+    "Id": 1,
+    "ProductId": 3,
+    "CollectionId": 1
+  },
+  {
+    "Id": 1,
+    "ProductId": 4,
+    "CollectionId": 2
+  },
+  {
+    "Id": 1,
+    "ProductId": 5,
+    "CollectionId": 2
+  },
+  {
+    "Id": 1,
+    "ProductId": 6,
+    "CollectionId": 2
+  },
+  {
+    "Id": 1,
+    "ProductId": 7,
+    "CollectionId": 3
+  },
+  {
+    "Id": 1,
+    "ProductId": 8,
+    "CollectionId": 3
+  },
+  {
+    "Id": 1,
+    "ProductId": 9,
+    "CollectionId": 3
+  }
+]
