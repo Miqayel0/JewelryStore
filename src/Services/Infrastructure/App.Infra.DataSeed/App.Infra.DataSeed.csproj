@@ -20,11 +20,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="JsonData\CollectionProduct.json" />
-    <None Remove="JsonData\Employee.json" />
-    <None Remove="JsonData\Material.json" />
-    <None Remove="JsonData\Product.json" />
-  </ItemGroup>
-
 </Project>

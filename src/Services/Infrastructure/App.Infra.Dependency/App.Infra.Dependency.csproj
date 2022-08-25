@@ -13,6 +13,7 @@
   </ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\SignalRHubs\App.SignalRHub\App.SignalRHub.csproj" />
 		<ProjectReference Include="..\App.Infra.Data\App.Infra.Data.csproj" />
 		<ProjectReference Include="..\App.Infra.DataSeed\App.Infra.DataSeed.csproj" />
 		<ProjectReference Include="..\..\UseCase\App.UseCase\App.UseCase.csproj" />

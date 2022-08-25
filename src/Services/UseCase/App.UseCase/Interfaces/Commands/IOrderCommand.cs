@@ -4,5 +4,6 @@ namespace App.UseCase.Interfaces.Commands;
 
 public interface IOrderCommand
 {
-    Task<int> CreateOrderAsync(OrderDto dto);
+    Task<OrderDto> CreateOrderAsync(CreateOrderDto dto);
+    Task FinishOrderAsync(int orderId);
 }

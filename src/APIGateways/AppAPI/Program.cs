@@ -1,4 +1,5 @@
 using App.Infra.Dependency;
+using App.SignalRHub.Extensions;
 using AppAPI.Extensions;
 using AppAPI.Infrastructure.Middlewares;
 
@@ -28,7 +29,11 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers().RequireAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHubs();
+    endpoints.MapControllers().RequireAuthorization();
+});
 
 await app.MigrateDatabaseAsync();
 

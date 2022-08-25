@@ -30,17 +30,17 @@ public class ResponseResultFilter : IAlwaysRunResultFilter
             context.Result = new NotFoundResult();
             return;
         }
-
-        if (value is ICollection list && list.Count == 0)
+        else if (result is BadRequestObjectResult bad && bad.Value is ValidationProblemDetails validation)
         {
-            context.Result = new NotFoundResult();
-            return;
+            var error = validation.Errors.First();
+            value = $"{error.Key}: {error.Value?[0]}";
+            value = new ErrorResult(value.ToString(), 400);
+            bad.StatusCode = 400;
         }
-
-        if (value is not UseCaseResult)
+        else if (value is not UseCaseResult)
         {
-            var statusCode = value.GetPropertyValue("Status") ?? HttpStatusCode.OK;
-            value = new DataResult<object>(value, (int) statusCode);
+            //var statusCode = value.GetPropertyValue("Status") ?? HttpStatusCode.OK;
+            value = new DataResult<object>(value);
         }
 
         propInfo?.SetValue(context.Result, value);

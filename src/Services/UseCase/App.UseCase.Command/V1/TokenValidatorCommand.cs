@@ -62,16 +62,14 @@ public class TokenValidatorCommand : ITokenValidatorCommand
     {
         JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
         JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-        var signKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SignKey));
-        var encKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.EncKey));
         var tokenHandler = new JwtSecurityTokenHandler
         {
             MapInboundClaims = false,
             TokenLifetimeInMinutes = _jwtOptions.AccessTokenLifetimeMinutes
         };
         _jwtOptions.TokenValidationParameters.ClockSkew = TimeSpan.FromMinutes(5);
-        _jwtOptions.TokenValidationParameters.IssuerSigningKey = signKey;
-        _jwtOptions.TokenValidationParameters.TokenDecryptionKey = encKey;
+        _jwtOptions.TokenValidationParameters.IssuerSigningKey ??= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SignKey));
+        _jwtOptions.TokenValidationParameters.TokenDecryptionKey ??= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.EncKey));
 
         var principal = tokenHandler.ValidateToken(token, _jwtOptions.TokenValidationParameters.Clone(), out SecurityToken securityToken);
         return (securityToken == null ? null : principal, securityToken);

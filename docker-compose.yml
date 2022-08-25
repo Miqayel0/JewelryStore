@@ -9,3 +9,6 @@ services:
       
   appdb:
     image: mcr.microsoft.com/mssql/server:2019-latest
+
+  redis:  
+    image: redis

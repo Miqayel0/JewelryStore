@@ -12,6 +12,7 @@ internal class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder.HasKey(e => e.Id);
 
         builder.Ignore(e => e.TotelPrice);
+        builder.Ignore(e => e.FinishDate);
 
         builder.HasOne(e => e.User)
             .WithMany(e => e.Orders)

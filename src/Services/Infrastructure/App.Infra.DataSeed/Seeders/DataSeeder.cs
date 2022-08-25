@@ -22,6 +22,8 @@ public class DataSeeder : IDataSeeder
         await SeedAsync(new JsonDataProvider<Employee>());
         await SeedAsync(new JsonDataProvider<Collection>());
         await SeedAsync(new JsonDataProvider<CollectionProduct>());
+
+        await SeedAsync(new ScriptDataProvider("sp_getEmployeeToAssign"));
     }
 
     private async Task SeedAsync(IScriptDataProvider scriptDataProvider)

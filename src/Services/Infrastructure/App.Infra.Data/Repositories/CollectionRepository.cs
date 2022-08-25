@@ -10,10 +10,4 @@ internal class CollectionRepository : RepositoryBase<Collection, int>, ICollecti
     {
     }
 
-    // TODO 
-    //Task FindEmployeeToAssignAsync()
-    //{
-
-    //}
-
 }

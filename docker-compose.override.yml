@@ -5,10 +5,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=appdb,1433;Database=Jewelry_db;User Id=sa;Password=Jik302_j8;Trusted_Connection=False;MultipleActiveResultSets=True;Packet Size=4096;
+      - ConnectionStrings__RedisConnection=redis
     ports:
       - "8001:80"
     depends_on:
       - appdb
+      - redis
       
   appdb:
     container_name: appdb
@@ -20,3 +22,12 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Jik302_j8
+
+  redis:  
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379

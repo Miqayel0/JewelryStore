@@ -13,6 +13,7 @@ public static class DependencyExtension
         services.AddScoped<ITokenStoreCommand, TokenStoreCommand>();
         services.AddScoped<ITokenValidatorCommand, TokenValidatorCommand>();
         services.AddScoped<IOrderCommand, OrderCommand>();
+        services.AddScoped<IEmployeeCommand, EmployeeCommand>();
 
         services.AddTransient<IUserSessionCommand, UserSessionCommand>();
 

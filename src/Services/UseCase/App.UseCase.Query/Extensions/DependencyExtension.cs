@@ -10,6 +10,7 @@ public static class DependencyExtension
     public static IServiceCollection AddQueryUseCases(this IServiceCollection services, IConfiguration config)
     {
         services.AddScoped<IUserInfoQuery, UserInfoQuery>();
+        services.AddScoped<IOrderQuery, OrderQuery>();
 
         return services;
     }

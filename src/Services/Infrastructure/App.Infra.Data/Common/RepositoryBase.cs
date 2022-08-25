@@ -9,7 +9,7 @@ namespace App.Infra.Data.Common;
 public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>, IDisposable
     where TEntity : class, IAggregateRoot<TKey>, new()
 {
-    private AppDbContext _context;
+    protected AppDbContext _context;
     protected DbConnection _connection;
 
     protected DbConnection DbConnection
@@ -56,7 +56,7 @@ public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>
         return entity;
     }
 
-    public async Task<T> AddAsync<T>(T entity) where T : class
+    public async Task<T> AddAsync<T>(T entity) where T : class, IEntity
     {
         await _context.AddAsync(entity);
         return entity;
@@ -77,9 +77,14 @@ public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>
         _context.Update(entity);
     }
 
-    public void Update<T>(T entity) where T : class
+    public void Update<T>(T entity) where T : class, IEntity
     {
         _context.Update(entity);
+    }
+
+    public void UpdateRange(IEnumerable<TEntity> entities)
+    {
+        _context.UpdateRange(entities);
     }
 
     public void Remove(TEntity entity)
@@ -87,7 +92,7 @@ public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>
         _context.Remove(entity);
     }
 
-    public void Remove<T>(T entity) where T : class
+    public void Remove<T>(T entity) where T : class, IEntity
     {
         _context.Remove(entity);
     }
