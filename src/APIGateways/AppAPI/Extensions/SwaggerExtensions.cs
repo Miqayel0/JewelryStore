@@ -10,7 +10,7 @@ public static class SwaggerExtensions
         services.AddSwaggerGen(c =>
         {
             c.ResolveConflictingActions (apiDescriptions => apiDescriptions.First ());
-            c.SwaggerDoc("v1", new OpenApiInfo {Title = "CMS App API", Version = "v1"});
+            c.SwaggerDoc("v1", new OpenApiInfo {Title = "Jewelry Shop API", Version = "v1"});
             // c.OperationFilter<AddRequiredHeaderParameter>();
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
